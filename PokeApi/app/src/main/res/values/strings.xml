@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PokeApi</string>
+
+    <string name="close">Cerrar</string>
+    <string name="search">Buscar</string>
+
+    <string name="abilities">Habilidades</string>
+    <string name="types">Tipos</string>
+    <string name="moves">Movimientos</string>
+
+    <string name="placeholder">PlaceHolder</string>
+
+    <string name="err_empty_pokemon">¡Vaya! No hemos podido encontrar el pokemon que buscabas.\n\nSigue intentándolo</string>
+    <string name="ws_error_server">Algo ha salido mal al conectarse a la API. Intentalo más tarde</string>
+
+
+
+</resources>

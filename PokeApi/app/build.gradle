@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "aom.pokeapi"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable true
+            //Server Config
+            resValue "string", "URL_REST_SERVER", "https://pokeapi.co/api/v2/"
+            resValue "string", "URL_REST_IMAGE", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%s.png"
+            resValue "string", "URL_REST_IMAGE_BACK", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/%s.png"
+        }
+
+        release {
+            debuggable false
+
+            resValue "string", "URL_REST_SERVER", "https://pokeapi.co/api/v2/"
+            resValue "string", "URL_REST_IMAGE", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%s.png"
+            resValue "string", "URL_REST_IMAGE_BACK", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/%s.png"
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    /* Android */
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.mediarouter:mediarouter:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+
+    /* Image loader async */
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'commons-io:commons-io:2.6'
+    /* Progress bar*/
+    implementation 'com.dinuscxj:circleprogressbar:1.1.1'
+
+    testImplementation 'junit:junit:4.12'
+
+}
